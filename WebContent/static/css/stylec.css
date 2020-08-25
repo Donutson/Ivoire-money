@@ -1,0 +1,47 @@
+body
+{
+	background-image:url("../images/login.jpg");
+	background-size:100% 100%;
+	color:rgb(192,255,62);
+}
+.container
+{
+	margin-bottom:120px;
+}
+h1
+{
+	padding-bottom:30px;
+}
+#copy
+{
+	 text-align:right;
+}
+footer
+{
+	background-color:rgb(79,79,79);
+	padding-top:20px;
+	padding-bottom:15px;
+	height:250px;
+	font-size:18px;
+}
+h1,label,footer
+{
+	color:rgb(205,205,0);
+}
+form a
+{
+	color:orange;
+}
+.error
+{
+	color:red;
+	font-size:20px;
+}
+/* pour tablette*/
+@media (max-width:992px)
+{
+	.navbar-brand img
+	{
+		width:33%;
+	}
+}

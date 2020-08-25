@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+
+	<servlet>
+		<servlet-name>Inscription</servlet-name>
+		<servlet-class>com.ivoiremoney.servlets.Inscription</servlet-class>
+		<multipart-config>
+			<location>E:/cours/coding/programmes/java/javaEE/ivoire-money/WebContent/static/images</location>
+			<max-file-size>10485760</max-file-size> <!-- 10 Mo -->
+			<max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
+			<file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
+		</multipart-config>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Inscription</servlet-name>
+		<url-pattern>/inscription</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Connexion</servlet-name>
+		<servlet-class>com.ivoiremoney.servlets.Connexion</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Connexion</servlet-name>
+		<url-pattern>/connexion</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Infos</servlet-name>
+		<servlet-class>com.ivoiremoney.servlets.Infos</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Infos</servlet-name>
+		<url-pattern>/infos</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Transfert</servlet-name>
+		<servlet-class>com.ivoiremoney.servlets.Transfert</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Transfert</servlet-name>
+		<url-pattern>/transfert</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Solde</servlet-name>
+		<servlet-class>com.ivoiremoney.servlets.Solde</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Solde</servlet-name>
+		<url-pattern>/solde</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Deconnexion</servlet-name>
+		<servlet-class>com.ivoiremoney.servlets.Deconnexion</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Deconnexion</servlet-name>
+		<url-pattern>/deconnexion</url-pattern>
+	</servlet-mapping>
+	
+	
+	<filter>
+		<filter-name>Private</filter-name>
+		<filter-class>com.ivoiremoney.filter.Private</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>Private</filter-name>
+		<url-pattern>/infos</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Private</filter-name>
+		<url-pattern>/transfert</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Private</filter-name>
+		<url-pattern>/solde</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Private</filter-name>
+		<url-pattern>/deconnexion</url-pattern>
+	</filter-mapping>
+	
+	
+	<filter>
+		<filter-name>Public</filter-name>
+		<filter-class>com.ivoiremoney.filter.Public</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>Public</filter-name>
+		<url-pattern>/connexion</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Public</filter-name>
+		<url-pattern>/inscription</url-pattern>
+	</filter-mapping>
+	
+
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+		</jsp-property-group>
+	</jsp-config>
+
+</web-app>

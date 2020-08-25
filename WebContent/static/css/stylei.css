@@ -1,0 +1,37 @@
+body
+{
+	background-image:url("../images/register.jpg");
+	background-size:100% 100%;
+	color:rgb(205,205,0);
+	padding-top:50px;
+}
+h1
+{
+	padding-bottom:30px;
+}
+#copy
+{
+	 text-align:right;
+}
+.error
+{
+	color:red;
+	font-size:20px;
+	background-color:black;
+}
+footer
+{
+	background-color:rgb(79,79,79);
+	padding-top:20px;
+	padding-bottom:15px;
+	height:250px;
+	font-size:18px;
+}
+/* pour tablette*/
+@media (max-width:992px)
+{
+	.navbar-brand img
+	{
+		width:33%;
+	}
+}
